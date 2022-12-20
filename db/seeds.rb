@@ -14,3 +14,5 @@ User.delete_all
     )
   end
 end
+
+User.create(email: 'test@email.com', password: 'abc123')

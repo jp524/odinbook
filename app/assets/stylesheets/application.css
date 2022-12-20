@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+/* POSTS */
+.post-container {
+  border: 1px solid black;
+}

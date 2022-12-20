@@ -1,0 +1,9 @@
+<% posts.each do |post| %>
+<div class="post-container">
+  <%# Email will be replaced by Profile name %>
+  <p><%= post.user.email %></p>
+  <%# DateTime will be formatted to show time in current user's timezone %>
+  <p><%= post.created_at%></p>
+  <h3><%= post.content %></h3>
+</div>
+<% end %>
