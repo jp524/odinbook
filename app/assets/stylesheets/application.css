@@ -31,3 +31,20 @@ nav {
 .post-container {
   border: 1px solid black;
 }
+
+.hidden {
+  display: none;
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-form textarea {
+  height: 60px;
+  width: 60vw;
+  resize: none;
+  margin-bottom: 5px;
+}
