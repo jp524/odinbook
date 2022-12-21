@@ -1,3 +1,6 @@
 <div class="posts-index content">
-  <%= render 'posts/post', posts: @posts %>
+  <%= turbo_frame_tag id='new_post', src: new_post_path %>
+  <div id='posts'>
+    <%= render @posts %>
+  </div>
 </div>

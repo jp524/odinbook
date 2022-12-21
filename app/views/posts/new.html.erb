@@ -1,13 +1,15 @@
-<div class="post-form">
-  <%= form_with model: @post do |form| %>
-    <%= form.label :content, 'Content', class: 'hidden' %>
-    <%= form.text_area :content %>
-    <%= form.submit "Post"%>
-  <% end %>
-  
-  <% if @post.errors.any? %>
-    <% @post.errors.full_messages.each do |message| %>
-      <div class='error-msg'><%= message %></div>
+<%= turbo_frame_tag id='new_post' do %>
+  <div class="post-form">
+    <%= form_with model: @post do |form| %>
+      <%= form.label :content, 'Content', class: 'hidden' %>
+      <%= form.text_area :content %>
+      <%= form.submit "Post"%>
     <% end %>
-  <% end %>
-</div>
+    
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |message| %>
+        <div class='error-msg'><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

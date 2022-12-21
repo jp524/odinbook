@@ -12,10 +12,12 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @post.save
+        format.turbo_stream { render turbo_stream: turbo_stream.append('posts', @post) }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
