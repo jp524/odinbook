@@ -48,3 +48,10 @@ nav {
   resize: none;
   margin-bottom: 5px;
 }
+
+/* USERS */
+
+.user-show {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
