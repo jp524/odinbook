@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.sorted_by_date
     # Will be revised to add posts from current_user's friends as well
   end
 
