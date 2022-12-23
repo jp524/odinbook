@@ -8,6 +8,7 @@
     <div class="friends">
       Placeholder for friends list.
     </div>
+   <%= link_to 'Edit my profile', edit_profile_path(current_user.profile.id) %>
   </div>
   <div class="content">
     <%= turbo_frame_tag id='new_post', src: new_post_path %>
