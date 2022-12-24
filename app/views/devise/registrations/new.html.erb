@@ -21,6 +21,17 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <%= f.fields_for :profile do |profile_form| %>
+    <%= profile_form.label :name, 'Name' %>
+    <%= profile_form.text_field :name, placeholder: 'Jane Doe' %>
+  
+    <%= profile_form.label :location, 'Location' %>
+    <%= profile_form.text_field :location, placeholder: 'London, UK' %>
+
+    <%= profile_form.label :birthday, 'Birthday' %>
+    <%= profile_form.date_field :birthday %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

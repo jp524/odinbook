@@ -6,9 +6,6 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_one :profile, dependent: :destroy
-  after_create :init_profile
 
-  def init_profile
-    create_profile(name: 'TBD', location: 'TBD', birthday: '1990-01-01')
-  end
+  accepts_nested_attributes_for :profile
 end

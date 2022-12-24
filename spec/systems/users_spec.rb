@@ -24,6 +24,9 @@ RSpec.describe 'Users system', type: :system do
     fill_in('Email', with: 'new_user_test@example.com')
     fill_in('Password', with: 'abc123')
     fill_in('Password confirmation', with: 'abc123')
+    fill_in('Name', with: 'User Test')
+    fill_in('Location', with: 'London, UK')
+    fill_in('Birthday', with: '1990-01-01')
     click_button('Sign up')
 
     expect(User.last.email).to eq('new_user_test@example.com')
