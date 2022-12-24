@@ -5,11 +5,13 @@ Profile.delete_all
 User.delete_all
 
 10.times do
-  name = Faker::Name.name
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  name = "#{first_name} #{last_name}"
 
   user = User.create(
     email: Faker::Internet.email(name: name),
-    password: Faker::Internet.password
+    password: 'abc123'
   )
 
   Profile.create(
@@ -25,20 +27,4 @@ User.delete_all
       user_id: user.id
     )
   end
-end
-
-known_user = User.create(email: 'test@email.com', password: 'abc123')
-
-Profile.create(
-  name: 'Jane Smith',
-  location: 'New York City, USA',
-  birthday: '1990-12-12',
-  user_id: known_user.id
-)
-
-3.times do
-  Post.create(
-    content: Faker::Lorem.paragraph,
-    user_id: known_user.id
-  )
 end

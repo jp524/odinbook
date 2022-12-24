@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'New post', type: :system do
-  include Devise::Test::IntegrationHelpers
   xit 'successfully creates a new post' do
+    # Removed test after implementing Turbo Frames and Streams
     user = User.create!(email: 'test@example.com', password: 'abc123')
     sign_in user
     visit new_post_path
@@ -15,7 +15,7 @@ RSpec.describe 'New post', type: :system do
   end
 
   it 'successfully creates a new post from the root page' do
-    user = User.create!(email: 'test@example.com', password: 'abc123')
+    user = FactoryBot.create(:user)
     sign_in user
     visit root_path
 
@@ -26,7 +26,7 @@ RSpec.describe 'New post', type: :system do
   end
 
   it 'successfully creates a new post from the user show page' do
-    user = User.create!(email: 'test@example.com', password: 'abc123')
+    user = FactoryBot.create(:user)
     sign_in user
     visit user_path(user)
 
