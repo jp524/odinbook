@@ -37,5 +37,13 @@ class User < ApplicationRecord
         friend_request.sent_by
       end
     end
+    list.pop
+  end
+
+  def can_send_requests_to
+    all_users = User.all
+    all_users.reject do |user|
+      friends.include?(user) || requested_friends.include?(user) || declined_friends.include?(user) || user == self
+    end
   end
 end
