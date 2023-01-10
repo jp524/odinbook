@@ -7,5 +7,10 @@ FactoryBot.define do
       create(:post, user: user)
       create(:profile, user: user)
     end
+
+    factory :user_two do
+      email { 'john_smith@test.com' }
+      password { 'abc123' }
+    end
   end
 end
