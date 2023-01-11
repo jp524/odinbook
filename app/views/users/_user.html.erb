@@ -1,4 +1,8 @@
 <div class='user-container'>
   <%= user.profile.name %>
-  <button type='button'>Send Friend Request</button>
+  <%= button_to 'Send Friend Request',
+    friend_requests_path,
+    params: {sent_by_id: current_user.id, sent_to_id: user.id},
+    method: :post
+  %>
 </div>
