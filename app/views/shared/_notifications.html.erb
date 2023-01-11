@@ -1,0 +1,20 @@
+<div class="notifications">
+  <% if current_user.pending_friend_requests.any? %>
+    <p>Friend Requests</p>
+    <% current_user.pending_friend_requests.each do |request| %>
+      <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
+      <%= button_to 'Accept',
+        friend_request_path(request.id),
+        params: { 'friend_request[status]': 'accepted' },
+        method: :patch
+      %>
+      <%= button_to 'Decline',
+        friend_request_path(request.id),
+        params: { 'friend_request[status]': 'declined' },
+        method: :patch
+      %>
+    <% end %>
+  <% else %>
+    <p>No Notifications</p>
+  <% end %>
+</div>

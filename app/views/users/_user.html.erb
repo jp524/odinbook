@@ -2,7 +2,7 @@
   <%= user.profile.name %>
   <%= button_to 'Send Friend Request',
     friend_requests_path,
-    params: {sent_by_id: current_user.id, sent_to_id: user.id},
+    params: { 'friend_request[sent_by_id]': current_user.id, 'friend_request[sent_to_id]': user.id },
     method: :post
   %>
 </div>

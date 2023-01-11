@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :profile
 
+  # List potential friends on Users#index
   def all_friend_requests
     sent_friend_requests + received_friend_requests
   end
@@ -45,5 +46,10 @@ class User < ApplicationRecord
     all_users.reject do |user|
       friends.include?(user) || requested_friends.include?(user) || declined_friends.include?(user) || user == self
     end
+  end
+
+  # List received friend requests under notifications
+  def pending_friend_requests
+    received_friend_requests.select { |friend_request| friend_request.status == 'requested' }
   end
 end

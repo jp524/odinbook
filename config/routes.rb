@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show]
   resources :posts, only: %i[index new create]
   resources :profiles, only: %i[edit update]
-  resources :friend_requests, only: [:create]
+  resources :friend_requests, only: %i[create update]
 end

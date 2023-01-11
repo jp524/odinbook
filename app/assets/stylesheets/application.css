@@ -27,6 +27,11 @@ nav {
   gap: 20px;
 }
 
+.notifications {
+  display: flex;
+  flex-direction: column;
+}
+
 /* POSTS */
 .post-container {
   border: 1px solid black;
