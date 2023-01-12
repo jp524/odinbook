@@ -30,8 +30,8 @@ class User < ApplicationRecord
 
   def find_friends(request_status)
     list = []
-    all_friend_requests.select! { |friend_request| friend_request.status == request_status }
-    list << all_friend_requests.map do |friend_request|
+    selected_requests = all_friend_requests.select { |friend_request| friend_request.status == request_status }
+    list << selected_requests.map do |friend_request|
       if friend_request.sent_by == self
         friend_request.sent_to
       elsif friend_request.sent_to == self
@@ -39,13 +39,6 @@ class User < ApplicationRecord
       end
     end
     list.pop
-  end
-
-  def can_send_requests_to
-    all_users = User.all
-    all_users.reject do |user|
-      friends.include?(user) || requested_friends.include?(user) || declined_friends.include?(user) || user == self
-    end
   end
 
   # List received friend requests under notifications

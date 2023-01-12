@@ -1,8 +1,14 @@
 <div class='user-container'>
   <%= user.profile.name %>
-  <%= button_to 'Send Friend Request',
-    friend_requests_path,
-    params: { 'friend_request[sent_by_id]': current_user.id, 'friend_request[sent_to_id]': user.id },
-    method: :post
-  %>
+  <% if current_user.friends.include?(user) %>
+    <span>Friends</span>
+  <% elsif current_user.requested_friends.include?(user) || current_user.declined_friends.include?(user) %>
+    <span>Request Sent</span>
+  <% else %>
+    <%= button_to 'Send Friend Request',
+      friend_requests_path,
+      params: { 'friend_request[sent_by_id]': current_user.id, 'friend_request[sent_to_id]': user.id },
+      method: :post
+    %>
+  <% end %>
 </div>
