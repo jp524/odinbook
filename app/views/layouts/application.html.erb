@@ -12,6 +12,11 @@
 
   <body>
     <%= render "shared/navbar" %>
+    <div class="flash">
+      <% flash.each do |type, message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

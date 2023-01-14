@@ -1,4 +1,5 @@
 <div class='user-container'>
+  <%= image_tag user.profile.picture_attachment_path %>
   <%= user.profile.name %>
   <% if current_user.friends.include?(user) %>
     <span>Friends</span>

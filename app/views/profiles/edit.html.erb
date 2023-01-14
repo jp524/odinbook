@@ -11,7 +11,11 @@
     <%= form.label :birthday, 'Birthday' %>
     <%= form.date_field :birthday %>
 
-   <%= form.submit 'Save' %>
+    <%= form.label :picture, 'Change your profile picture *' %>
+    <%= form.file_field :picture %>
+    <p>* Picture must be in a square format or else picture will be cropped</p>
+    
+    <%= form.submit 'Save' %>
 
     <% if @profile.errors.any? %>
       <% @profile.errors.full_messages.each do |message| %>

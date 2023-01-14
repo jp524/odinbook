@@ -22,7 +22,7 @@ class RegistrationsController < Devise::RegistrationsController
       :email,
       :password,
       :password_confirmation,
-      profile_attributes: %i[name location birthday]
+      profile_attributes: %i[name location birthday picture]
     ]
   end
 end

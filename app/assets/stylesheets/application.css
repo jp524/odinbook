@@ -60,3 +60,11 @@ nav {
   display: grid;
   grid-template-columns: 180px 1fr;
 }
+
+.user-container img {
+  width: 100px;
+}
+
+.profile img {
+  width: 150px;
+}

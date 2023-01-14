@@ -3,6 +3,9 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    return unless current_user != @profile.user
+
+    redirect_to user_path(current_user), flash: { error: 'You can only edit your own profile' }
   end
 
   def update
@@ -17,6 +20,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :location, :birthday)
+    params.require(:profile).permit(:name, :location, :birthday, :picture)
   end
 end

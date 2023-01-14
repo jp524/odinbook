@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_one_attached :picture
 
   validates :name, presence: true
   validates :location, presence: true
@@ -12,5 +13,9 @@ class Profile < ApplicationRecord
 
   def formatted_birthday
     birthday.strftime('%B %d')
+  end
+
+  def picture_attachment_path
+    picture.attached? ? picture : 'default_picture.png'
   end
 end
