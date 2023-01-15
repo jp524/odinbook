@@ -6,15 +6,31 @@
       <p>Location: <%= @profile.location %></p>
       <p>Birthday: <%= @profile.formatted_birthday %></p>
     </div>
+
     <div class="friends">
-      Placeholder for friends list.
+      <h4>Friends</h4>
+      <% @user.friends.each do |friend| %>
+        <%= image_tag friend.profile.picture_attachment_path %>
+      <% end %>
     </div>
-   <%= link_to 'Edit my profile', edit_profile_path(current_user.profile.id) %>
+
+    <% if current_user == @user %>
+      <%= link_to 'Edit my profile', edit_profile_path(current_user.profile.id) %>
+    <% end %>
   </div>
+  
   <div class="content">
-    <%= turbo_frame_tag id='new_post', src: new_post_path %>
-    <div id='posts'>
-      <%= render @posts %>
-    </div>
-  </div>
+    <% if current_user == @user %>
+      <%= turbo_frame_tag id='new_post', src: new_post_path %>
+      <div id='posts'>
+        <%= render @posts %>
+      </div>
+    <% elsif current_user.friends.include?(@user) %>
+      <div id='posts'>
+        <%= render @posts %>
+      </div>
+    <% else %>
+      <p>Only <%= @profile.name %>'s friends can see their posts.</p>
+    <% end %>
+   </div>
 </div>

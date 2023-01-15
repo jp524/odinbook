@@ -68,3 +68,7 @@ nav {
 .profile img {
   width: 150px;
 }
+
+.user-show .friends img {
+  width: 50px;
+}

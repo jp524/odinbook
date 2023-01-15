@@ -1,6 +1,7 @@
 <div class='user-container'>
   <%= image_tag user.profile.picture_attachment_path %>
-  <%= user.profile.name %>
+  <%= link_to user.profile.name, user %>
+
   <% if current_user.friends.include?(user) %>
     <span>Friends</span>
   <% elsif current_user.requested_friends.include?(user) || current_user.declined_friends.include?(user) %>
