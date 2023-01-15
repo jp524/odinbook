@@ -2,27 +2,27 @@
 
 <div class="profile-form">
   <%= form_with model: @profile do |form| %>
-    <%= form.label :name, 'Name' %>
-    <%= form.text_field :name, placeholder: 'Jane Doe' %>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, placeholder: "Jane Doe" %>
   
-    <%= form.label :location, 'Location' %>
-    <%= form.text_field :location, placeholder: 'London, UK' %>
+    <%= form.label :location, "Location" %>
+    <%= form.text_field :location, placeholder: "London, UK" %>
 
-    <%= form.label :birthday, 'Birthday' %>
+    <%= form.label :birthday, "Birthday" %>
     <%= form.date_field :birthday %>
 
-    <%= form.label :picture, 'Change your profile picture *' %>
+    <%= form.label :picture, "Change your profile picture *" %>
     <%= form.file_field :picture %>
     <p>* Picture must be in a square format or else picture will be cropped</p>
     
-    <%= form.submit 'Save' %>
+    <%= form.submit "Save" %>
 
     <% if @profile.errors.any? %>
       <% @profile.errors.full_messages.each do |message| %>
-        <div class='error-msg'><%= message %></div>
+        <div class="error-msg"><%= message %></div>
       <% end %>
     <% end %>
   <% end %>
 
-  <%= link_to 'Back to my page', user_path(current_user) %>
+  <%= link_to "Back to my page", user_path(current_user) %>
 </div>

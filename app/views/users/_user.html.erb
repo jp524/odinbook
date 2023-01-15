@@ -1,15 +1,15 @@
-<div class='user-container'>
+<div class="user-container">
   <%= image_tag user.profile.picture_attachment_path %>
   <%= link_to user.profile.name, user %>
 
   <% if current_user.friends.include?(user) %>
-    <span>Friends</span>
+    <p>Friends</p>
   <% elsif current_user.requested_friends.include?(user) || current_user.declined_friends.include?(user) %>
-    <span>Request Sent</span>
+    <p>Request Sent</p>
   <% else %>
-    <%= button_to 'Send Friend Request',
+    <%= button_to "Send Friend Request",
       friend_requests_path,
-      params: { 'friend_request[sent_by_id]': current_user.id, 'friend_request[sent_to_id]': user.id },
+      params: { "friend_request[sent_by_id]": current_user.id, "friend_request[sent_to_id]": user.id },
       method: :post
     %>
   <% end %>

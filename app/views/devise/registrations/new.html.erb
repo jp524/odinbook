@@ -22,16 +22,16 @@
   </div>
 
   <%= f.fields_for :profile do |profile_form| %>
-    <%= profile_form.label :name, 'Name' %>
-    <%= profile_form.text_field :name, placeholder: 'Jane Doe' %>
+    <%= profile_form.label :name, "Name" %>
+    <%= profile_form.text_field :name, placeholder: "Jane Doe" %>
   
-    <%= profile_form.label :location, 'Location' %>
-    <%= profile_form.text_field :location, placeholder: 'London, UK' %>
+    <%= profile_form.label :location, "Location" %>
+    <%= profile_form.text_field :location, placeholder: "London, UK" %>
 
-    <%= profile_form.label :birthday, 'Birthday' %>
+    <%= profile_form.label :birthday, "Birthday" %>
     <%= profile_form.date_field :birthday %>
     
-    <%= profile_form.label :picture, 'Add your profile picture *' %>
+    <%= profile_form.label :picture, "Add your profile picture *" %>
     <%= profile_form.file_field :picture %>
     <p>* Picture must be in a square format or else picture will be cropped</p>
   <% end %>
