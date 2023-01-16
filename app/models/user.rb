@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+
   has_one :profile, dependent: :destroy
+
   has_many :sent_friend_requests, foreign_key: :sent_by, class_name: 'FriendRequest', dependent: :destroy
   has_many :received_friend_requests, foreign_key: :sent_to, class_name: 'FriendRequest', dependent: :destroy
 
