@@ -13,7 +13,6 @@ class FriendRequestsController < ApplicationController
   private
 
   def friend_request_params
-    # params.permit(:sent_by_id, :sent_to_id, :status)
     params.require(:friend_request).permit(:sent_by_id, :sent_to_id, :status)
   end
 end
