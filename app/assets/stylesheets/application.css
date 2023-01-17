@@ -37,6 +37,10 @@ nav {
   border: 1px solid black;
 }
 
+.post-container .liked {
+  background-color: skyblue;
+}
+
 .hidden {
   display: none;
 }
@@ -53,6 +57,7 @@ nav {
   resize: none;
   margin-bottom: 5px;
 }
+
 
 /* USERS */
 
