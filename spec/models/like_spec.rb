@@ -20,12 +20,33 @@ RSpec.describe Like, type: :model do
       expect(post.liked_by).to eq([user_two, user_three])
     end
 
-    describe 'A user that wrote a post' do
+    describe 'A user' do
       it 'cannot like their own post' do
         user = FactoryBot.create(:user)
         post = user.posts.first
         like = Like.create(post: post, user: user)
         expect(like).to_not be_valid
+      end
+
+      it 'cannot like the same post twice' do
+        user = FactoryBot.create(:user)
+        user_two = FactoryBot.create(:user_two)
+        post = user.posts.first
+        like = Like.create(post: post, user: user_two)
+        expect(like).to be_valid
+        second_like = Like.create(post: post, user: user_two)
+        expect(second_like).to_not be_valid
+      end
+
+      it 'can like two different posts' do
+        user = FactoryBot.create(:user)
+        user_two = FactoryBot.create(:user_two)
+        post = user.posts.first
+        post_two = Post.create(user: user, content: 'test post')
+        like = Like.create(post: post, user: user_two)
+        expect(like).to be_valid
+        second_like = Like.create(post: post_two, user: user_two)
+        expect(second_like).to be_valid
       end
     end
   end
