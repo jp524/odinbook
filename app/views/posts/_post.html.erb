@@ -1,6 +1,6 @@
 <div class="post-container">
-  <p><%= post.user.profile.name %></p>
-  <p><%= post.created_at%></p>
+  <%= link_to post.user.profile.name, post.user %>
+  <%= post.formatted_datetime%>
   <h3><%= post.content %></h3>
 
   <% if current_user.liked_posts.include?(post) %>
