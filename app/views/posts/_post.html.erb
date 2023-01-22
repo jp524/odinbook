@@ -3,22 +3,5 @@
   <%= post.formatted_datetime%>
   <h3><%= post.content %></h3>
 
-  <% if current_user.liked_posts.include?(post) %>
-    <% like_id = current_user.likes.select { |likes| likes.post_id == post.id } %>
-    <%= button_to "Like",
-        like_path(like_id),
-        method: :delete,
-        class: "liked"
-    %>
-  <% elsif post.user != current_user %>
-    <%= button_to "Like",
-        likes_path,
-        params: { "like[post_id]": post.id, "like[user_id]": current_user.id },
-        method: :post
-    %>
-  <% end %>
-
-  <% if post.liked_by.any? %>
-    <%= pluralize(post.liked_by.count, "Like") %>
-  <% end %>
+  <%= render partial: "likes/post_likes", locals: {post: post} %>
 </div>
