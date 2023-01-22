@@ -32,6 +32,10 @@ nav {
   flex-direction: column;
 }
 
+.icon img {
+  width: 20px;
+}
+
 /* POSTS */
 .post-container {
   border: 1px solid black;
