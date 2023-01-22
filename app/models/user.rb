@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :sent_friend_requests, foreign_key: :sent_by, class_name: 'FriendRequest', dependent: :destroy
   has_many :received_friend_requests, foreign_key: :sent_to, class_name: 'FriendRequest', dependent: :destroy
 
+  has_many :comments, dependent: :destroy
+
   accepts_nested_attributes_for :profile
 
   # List potential friends on Users#index
