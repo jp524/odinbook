@@ -1,0 +1,9 @@
+<%= turbo_frame_tag id="new_comment" do %>
+  <div class="comment-form">
+    <%= form_with model: @comment do |form| %>
+      <%= form.label :content, "Content", class: "hidden" %>
+      <%= form.text_area :content %>
+      <%= form.submit "Comment"%>
+    <% end %>
+  </div>
+<% end %>
