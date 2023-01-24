@@ -64,7 +64,6 @@ nav {
 
 
 /* USERS */
-
 .user-show {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -80,4 +79,10 @@ nav {
 
 .user-show .friends img {
   width: 50px;
+}
+
+/* COMMENTS */
+.comment-container {
+  border: 1px solid blue;
+  margin: 5px;
 }

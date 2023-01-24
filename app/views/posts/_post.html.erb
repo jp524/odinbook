@@ -4,4 +4,8 @@
   <h3><%= post.content %></h3>
 
   <%= render partial: "likes/post_likes", locals: {post: post} %>
+
+  <% post.comments.sorted_by_date.each do |comment| %>
+    <%= render partial: "comments/comment", locals: {comment: comment} %>
+  <% end %>
 </div>

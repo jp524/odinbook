@@ -1,6 +1,9 @@
 # frozen_string_literal: false
 
+Comment.delete_all
+Like.delete_all
 Post.delete_all
+FriendRequest.delete_all
 Profile.delete_all
 User.delete_all
 
