@@ -1,0 +1,8 @@
+<%= form_with model: post, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form| %>
+  <%= form_error_notification(post) %>
+
+  <%= form.label :content, "Content", class: "hidden" %>
+  <%= form.text_area :content %>
+  <%= link_to "Cancel", posts_path %>
+  <%= form.submit "Post"%>
+<% end %>

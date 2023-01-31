@@ -1,13 +1,16 @@
-<div class="post-container" id="<%= dom_id(post) %>">
-  <%= link_to post.user.profile.name, post.user %>
-  <%= post.formatted_datetime%>
-  <h3><%= post.content %></h3>
-
-  <%= render partial: "likes/post_likes", locals: {post: post} %>
-
-  <% post.comments.sorted_by_date.each do |comment| %>
-    <%= render partial: "comments/comment", locals: {comment: comment} %>
-  <% end %>
-
-  <%= turbo_frame_tag id="new_comment", src: new_comment_path %>
-</div>
+<%= turbo_frame_tag post do %>
+  <div class="post">
+    <div class="post__header">
+      <div class="post__author">
+        <%= link_to post.user.profile.name, post.user %>
+      </div>
+      <div class="post_date">
+        <%= post.formatted_datetime %>
+      </div>
+    </div>
+    
+    <div class="post__body">
+      <%= post.content %>
+    </div>
+  </div>
+<% end%>

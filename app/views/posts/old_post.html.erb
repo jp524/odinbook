@@ -1,0 +1,15 @@
+<%= turbo_frame_tag post do %>
+  <div class="post">
+    <%= link_to post.user.profile.name, post.user %>
+    <%= post.formatted_datetime %>
+    <h3><%= post.content</h3> %>
+
+    <%= render partial: "likes/post_likes", locals: {post: post} %>
+
+    <% post.comments.sorted_by_date.each do |comment| %>
+      <%= render partial: "comments/comment", locals: {comment: comment} %>
+    <% end %>
+
+    <%= turbo_frame_tag id="new_comment", src: new_comment_path %>
+  </div>
+<% end %>
