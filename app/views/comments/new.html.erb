@@ -1,9 +1,9 @@
-<%= turbo_frame_tag id="new_comment" do %>
-  <div class="comment-form">
-    <%= form_with model: @comment do |form| %>
-      <%= form.label :content, "Content", class: "hidden" %>
-      <%= form.text_area :content %>
-      <%= form.submit "Comment"%>
-    <% end %>
+<main class="container">
+  <div class="header">
+    <h1>New comment</h1>
   </div>
-<% end %>
+
+  <%= turbo_frame_tag nested_dom_id(@post, Comment.new) do %>
+    <% render "form", post: @post, comment: @comment%>
+  <% end %>
+</main>

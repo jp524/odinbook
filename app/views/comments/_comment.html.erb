@@ -1,5 +1,9 @@
-<div class="comment-container" id="<%= dom_id(comment) %>">
-  <%= link_to comment.user.profile.name, comment.user %>
-  <%= comment.formatted_datetime %>
-  <h4><%= comment.content %></h4>
+<div class="comment">
+  <div class="comment__header">
+      <%= render "shared/author_date", author: comment.user, date: comment.created_at %>
+  </div>
+
+  <div class="comment__body">
+    <%= comment.content %>
+  </div>
 </div>

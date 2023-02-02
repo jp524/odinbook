@@ -62,7 +62,6 @@ nav {
   margin-bottom: 5px;
 }
 
-
 /* USERS */
 .user-show {
   display: grid;
@@ -82,7 +81,7 @@ nav {
 }
 
 /* COMMENTS */
-.comment-container {
+.comment {
   border: 1px solid blue;
   margin: 5px;
 }
