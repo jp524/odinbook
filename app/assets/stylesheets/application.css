@@ -68,15 +68,15 @@ nav {
   grid-template-columns: 180px 1fr;
 }
 
-.user-container img {
+.user__info img {
   width: 100px;
 }
 
-.profile img {
+.sidebar__profile img {
   width: 150px;
 }
 
-.user-show .friends img {
+.sidebar__friends img {
   width: 50px;
 }
 
