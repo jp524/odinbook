@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # @posts = Post.all.includes(user: [:profile])
-    @posts = Post.includes(user: [:profile]).user_and_friends_posts(current_user).sorted_by_date
+    @posts = Post.includes(:comments, :likes, user: [:profile]).user_and_friends_posts(current_user).sorted_by_date
   end
 
   def new

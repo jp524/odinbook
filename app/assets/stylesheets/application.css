@@ -37,11 +37,11 @@ nav {
 }
 
 /* POSTS */
-.post-container {
+.post {
   border: 1px solid black;
 }
 
-.post-container .liked {
+.post .liked {
   background-color: skyblue;
 }
 
