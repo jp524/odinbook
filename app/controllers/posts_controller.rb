@@ -11,12 +11,12 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    respond_to do |format|
-      if @post.save
-        format.turbo_stream { render turbo_stream: turbo_stream.prepend('posts', @post) }
-      else
-        format.html { render :new, status: :unprocessable_entity }
+    if @post.save
+      respond_to do |format|
+        format.turbo_stream
       end
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
