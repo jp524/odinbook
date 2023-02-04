@@ -14,74 +14,74 @@
  *= require_self
  */
 
-nav {
+/* nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
-.nav-links {
+/* .nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-}
+} */
 
-.notifications {
+/* .notifications {
   display: flex;
   flex-direction: column;
-}
+} */
 
-.icon img {
+/* .icon img {
   width: 20px;
-}
+} */
 
 /* POSTS */
-.post {
+/* .post {
   border: 1px solid black;
-}
+} */
 
-.post .liked {
+/* .post .liked {
   background-color: skyblue;
-}
+} */
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
-.post-form form {
+/* .post-form form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
-.post-form textarea {
+/* .post-form textarea {
   height: 60px;
   width: 60vw;
   resize: none;
   margin-bottom: 5px;
-}
+} */
 
 /* USERS */
-.user-show {
+/* .user-show {
   display: grid;
   grid-template-columns: 180px 1fr;
-}
+} */
 
-.user__info img {
+/* .user__info img {
   width: 100px;
-}
+} */
 
-.sidebar__profile img {
+/* .sidebar__profile img {
   width: 150px;
-}
+} */
 
-.sidebar__friends img {
+/* .sidebar__friends img {
   width: 50px;
-}
+} */
 
 /* COMMENTS */
-.comment {
+/* .comment {
   border: 1px solid blue;
   margin: 5px;
-}
+} */

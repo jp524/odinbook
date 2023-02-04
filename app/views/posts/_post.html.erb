@@ -21,7 +21,8 @@
 
       <%= link_to "Add a comment",
                   [:new, post, :comment],
-                  data: { turbo_frame: nested_dom_id(post, Comment.new) } %>
+                  data: { turbo_frame: nested_dom_id(post, Comment.new) },
+                  class: "btn btn--light" %>
     </div>
   </div>
 <% end%>

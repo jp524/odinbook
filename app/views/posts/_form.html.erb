@@ -3,6 +3,6 @@
 
   <%= form.label :content, "Content", class: "hidden" %>
   <%= form.text_area :content %>
-  <%= link_to "Cancel", posts_path %>
-  <%= form.submit "Post"%>
+  <%= link_to "Cancel", posts_path, class: "btn btn--light" %>
+  <%= form.submit "Post", class: "btn btn--secondary" %>
 <% end %>

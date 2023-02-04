@@ -14,7 +14,7 @@
   <%= form.file_field :picture %>
   <p>* Picture must be in a square format or else it will be cropped</p>
   
-  <%= form.submit "Save" %>
+  <%= form.submit "Save", class: "btn btn--secondary" %>
 
-  <%= link_to "Back to my page", user_path(current_user) %>
+  <%= link_to "Back to my page", user_path(current_user), class: "btn btn--light" %>
 <% end %>
