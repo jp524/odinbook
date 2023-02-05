@@ -1,9 +1,11 @@
-<ul class="notifications">
+<ul class="notifications" data-controller="toggle" data-toggle-change-class="notifications--hidden">
   <% if current_user.pending_friend_requests.any? %>
     <li class="notifications--parent">
       <%= button_tag image_tag("notifications/new.png", class: "notifications--icon"),
-                     class: "btn" %>
-      <ul class="notifications--children" >
+                     class: "btn",
+                     data: { action: "toggle#switch" } %>
+      <ul class="notifications--children notifications--hidden"
+          data-toggle-target="toToggle" >
         <h4>Friend Requests</h4>
         <% current_user.pending_friend_requests.each do |request| %>
           <li>
@@ -25,7 +27,14 @@
       </ul>
     </li>
   <% else %>
-    <%= button_tag image_tag("notifications/none.png", class: "notifications--icon"),
-                    class: "btn" %>
+    <li class="notifications--parent">
+      <%= button_tag image_tag("notifications/none.png", class: "notifications--icon"),
+                     class: "btn",
+                     data: { action: "toggle#switch" } %>
+      <ul class="notifications--children notifications--hidden"
+          data-toggle-target="toToggle" >
+        <li class="notifications--none">Nothing new for now</li>
+      </ul>
+    </li>
   <% end %>
 </ul>
