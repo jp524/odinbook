@@ -1,26 +1,31 @@
-<div class="notifications" data-controller="dropdown" class="relative">
+<ul class="notifications">
   <% if current_user.pending_friend_requests.any? %>
-    <%= button_tag image_tag("notifications/new.png"), class: "icon", data: { action: "dropdown#toggle click@window->dropdown#hide" } %>
-
-    <div data-dropdown-target="menu">
-      <div data-action="dropdown#toggle">
-          <p>Friend Requests</p>
-          <% current_user.pending_friend_requests.each do |request| %>
-            <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
+    <li class="notifications--parent">
+      <%= button_tag image_tag("notifications/new.png", class: "notifications--icon"),
+                     class: "btn" %>
+      <ul class="notifications--children" >
+        <h4>Friend Requests</h4>
+        <% current_user.pending_friend_requests.each do |request| %>
+          <li>
+            <div class="notifications__name">
+              <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
+            </div>
             <%= button_to "Accept",
               friend_request_path(request.id),
               params: { "friend_request[status]": "accepted" },
-              method: :patch
-            %>
+              method: :patch,
+              class: "btn btn--secondary" %>
             <%= button_to "Decline",
               friend_request_path(request.id),
               params: { "friend_request[status]": "declined" },
-              method: :patch
-            %>
+              method: :patch,
+              class: "btn btn--light" %>
+          </li>
         <% end %>
-      </div>
-    </div>
+      </ul>
+    </li>
   <% else %>
-    <%= button_tag image_tag("notifications/none.png"), class: "icon" %>
+    <%= button_tag image_tag("notifications/none.png", class: "notifications--icon"),
+                    class: "btn" %>
   <% end %>
-</div>
+</ul>
