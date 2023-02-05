@@ -69,4 +69,9 @@
       color: var(--color-white);
     }
   }
+
+  &--small {
+    font-size: var(--font-size-s);
+    padding: var(--space-xxs) var(--space-xs);
+  }
 }

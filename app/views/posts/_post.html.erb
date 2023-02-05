@@ -17,12 +17,12 @@
         <%= render post.comments, post: post %>
       <% end %>
 
-      <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
-
       <%= link_to "Add a comment",
                   [:new, post, :comment],
                   data: { turbo_frame: nested_dom_id(post, Comment.new) },
-                  class: "btn btn--light" %>
+                  class: "btn btn--light btn--small" %>
+
+      <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
     </div>
   </div>
 <% end%>
