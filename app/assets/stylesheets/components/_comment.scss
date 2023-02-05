@@ -1,0 +1,25 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-small);
+  margin: var(--space-xs) 0;
+  padding: var(--space-xs);
+
+  &__content {
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  &__header .date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+  }
+}
