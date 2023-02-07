@@ -1,7 +1,7 @@
 <%= turbo_frame_tag post do %>
   <div class="post">
     <div class="post__header">
-        <%= render "shared/author_date", author: post.user, date: post.created_at %>
+        <%= render "shared/post_comment_meta", author: post.user, date: post.created_at %>
     </div>
     
     <div class="post__body">
