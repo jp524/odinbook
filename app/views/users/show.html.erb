@@ -9,16 +9,18 @@
       <% if current_user == @user %>
         <%= link_to "Edit my profile",
                     edit_profile_path(current_user.profile.id),
-                    class: "btn btn--light" %>
+                    class: "btn btn--light btn--small" %>
       <% end %>
     </div>
 
     <div class="sidebar__friends">
     <% if current_user == @user || current_user.friends.include?(@user) %>
         <h4>Friends</h4>
-        <% @user.friends.each do |friend| %>
-          <%= link_to image_tag(friend.profile.picture_attachment_path), friend %>
-        <% end %>
+        <div class="sidebar__friends--container">
+          <% @user.friends.each do |friend| %>
+            <%= link_to image_tag(friend.profile.picture_attachment_path), friend %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

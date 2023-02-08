@@ -11,8 +11,10 @@
 @import "components/comment";
 @import "components/post";
 @import "components/post_comment_meta";
-
+@import "components/sidebar";
+@import "components/user";
 
 // Layouts
 @import "layouts/container";
 @import "layouts/header";
+@import "layouts/user-show";
