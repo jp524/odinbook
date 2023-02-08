@@ -6,4 +6,6 @@
   <%= turbo_frame_tag Profile.new do %>
     <% render "form", profile: @profile%>
   <% end %>
+
+  <%= link_to "Change password or email", edit_user_registration_path(current_user) %>
 </main>
