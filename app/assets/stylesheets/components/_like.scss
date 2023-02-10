@@ -4,6 +4,10 @@
   gap: var(--space-xs);
   padding: var(--space-xxs) 0;
 
+  &__icon {
+    width: var(--space-m);
+  }
+
   &__count {
     font-style: italic;
   }

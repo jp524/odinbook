@@ -74,4 +74,8 @@
     font-size: var(--font-size-s);
     padding: var(--space-xxs) var(--space-xs);
   }
+
+  &--icon {
+  padding: 0;
+  }
 }

@@ -2,8 +2,9 @@
   <% if current_user.pending_friend_requests.any? %>
     <li class="notifications--parent">
       <%= button_tag image_tag("notifications/new.png", class: "notifications--icon"),
-                     class: "btn",
-                     data: { action: "toggle#switch" } %>
+                     class: "btn btn--icon",
+                     data: { action: "toggle#switch" },
+                     title: "Notifications" %>
       <ul class="notifications--children hidden"
           data-toggle-target="toToggle" >
         <h4>Friend Requests</h4>
@@ -29,8 +30,9 @@
   <% else %>
     <li class="notifications--parent">
       <%= button_tag image_tag("notifications/none.png", class: "notifications--icon"),
-                     class: "btn",
-                     data: { action: "toggle#switch" } %>
+                     class: "btn btn--icon",
+                     data: { action: "toggle#switch" },
+                     title: "Notifications" %>
       <ul class="notifications--children hidden"
           data-toggle-target="toToggle" >
         <li class="notifications--none">Nothing new for now</li>
