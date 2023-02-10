@@ -2,6 +2,13 @@
   <div class="post">
     <div class="post__header">
         <%= render "layouts/post_comment_meta", author: post.user, date: post.created_at %>
+        <% if post.user == current_user %>
+          <%= button_to image_tag("delete.png", class: "post__delete-icon"),
+                       [post],
+                       method: :delete,
+                       class: "btn btn--icon",
+                       title: "Delete post" %>
+        <% end %>
     </div>
     
     <div class="post__body">

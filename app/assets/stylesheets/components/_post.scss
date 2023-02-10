@@ -16,4 +16,14 @@
     display: flex;
     gap: var(--space-xs);
   }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__delete-icon {
+    width: var(--space-m);
+  }
 }
