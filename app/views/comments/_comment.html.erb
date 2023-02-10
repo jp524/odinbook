@@ -1,9 +1,18 @@
-<div class="comment">
-  <div class="comment__header">
+<%= turbo_frame_tag comment do %>
+  <div class="comment">
+    <div class="comment__header">
       <%= render "layouts/post_comment_meta", author: comment.user, date: comment.created_at %>
-  </div>
+      <% if comment.user == current_user %>
+        <%= button_to image_tag("delete.png", class: "comment__delete-icon"),
+                       [post, comment],
+                       method: :delete,
+                       class: "btn btn--icon",
+                       title: "Delete comment" %>
+      <% end %>
+    </div>
 
-  <div class="comment__body">
-    <%= comment.content %>
+    <div class="comment__body">
+      <%= comment.content %>
+    </div>
   </div>
-</div>
+<% end %>
