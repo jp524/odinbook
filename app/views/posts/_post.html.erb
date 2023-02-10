@@ -16,18 +16,20 @@
     </div>
 
     <div class="post__footer">
-      <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
-        <%= render partial: "likes/like", locals: { post: post } %>
-      <% end %>
+      <div class="post__actions">
+          <%= link_to "Add a comment",
+                      [:new, post, :comment],
+                      data: { turbo_frame: nested_dom_id(post, Comment.new) },
+                      class: "btn btn--light btn--small" %>
+                    
+        <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
+          <%= render partial: "likes/like", locals: { post: post } %>
+        <% end %>
+      </div>
 
       <%= turbo_frame_tag nested_dom_id(post, "comments") do %>
         <%= render post.comments, post: post %>
       <% end %>
-
-      <%= link_to "Add a comment",
-                  [:new, post, :comment],
-                  data: { turbo_frame: nested_dom_id(post, Comment.new) },
-                  class: "btn btn--light btn--small" %>
 
       <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
     </div>

@@ -26,4 +26,9 @@
   &__delete-icon {
     width: var(--space-m);
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
 }
