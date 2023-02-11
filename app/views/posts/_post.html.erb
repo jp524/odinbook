@@ -2,6 +2,13 @@
   <div class="post">
     <div class="post__header">
         <%= render "layouts/post_comment_meta", author: post.user, date: post.created_at %>
+        <% if post.user == current_user %>
+          <%= button_to image_tag("delete.png", class: "post__delete-icon"),
+                       [post],
+                       method: :delete,
+                       class: "btn btn--icon",
+                       title: "Delete post" %>
+        <% end %>
     </div>
     
     <div class="post__body">
@@ -9,18 +16,20 @@
     </div>
 
     <div class="post__footer">
-      <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
-        <%= render partial: "likes/like", locals: { post: post } %>
-      <% end %>
+      <div class="post__actions">
+          <%= link_to "Add a comment",
+                      [:new, post, :comment],
+                      data: { turbo_frame: nested_dom_id(post, Comment.new) },
+                      class: "btn btn--light btn--small" %>
+                    
+        <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
+          <%= render partial: "likes/like", locals: { post: post } %>
+        <% end %>
+      </div>
 
       <%= turbo_frame_tag nested_dom_id(post, "comments") do %>
         <%= render post.comments, post: post %>
       <% end %>
-
-      <%= link_to "Add a comment",
-                  [:new, post, :comment],
-                  data: { turbo_frame: nested_dom_id(post, Comment.new) },
-                  class: "btn btn--light btn--small" %>
 
       <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
     </div>

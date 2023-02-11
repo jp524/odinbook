@@ -4,4 +4,10 @@
   padding-left: var(--space-xs);
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: 50rem) {
+    padding-right: var(--space-m);
+    padding-left: var(--space-m);
+    max-width: 60rem;
+  }
 }

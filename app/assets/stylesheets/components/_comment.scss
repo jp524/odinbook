@@ -13,8 +13,14 @@
     width: 100%;
   }
 
-  &__actions {
+  &__header {
+    width: 100%;
     display: flex;
-    gap: var(--space-xs);
+    justify-content: space-between;
   }
+
+  &__delete-icon {
+    width: var(--space-m);
+  }
+
 }
