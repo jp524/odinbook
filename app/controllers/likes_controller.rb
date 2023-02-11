@@ -1,11 +1,12 @@
 class LikesController < ApplicationController
   def create
-    @like = Like.create!(like_params)
+    @like = current_user.likes.build(like_params)
+    @like.save
     redirect_to request.referrer
   end
 
   def destroy
-    @like = Like.find(params[:id])
+    @like = current_user.likes.find(params[:id])
     @like.destroy
     redirect_to request.referrer
   end
@@ -13,6 +14,6 @@ class LikesController < ApplicationController
   private
 
   def like_params
-    params.require(:like).permit(:post_id, :user_id)
+    params.require(:like).permit(:post_id)
   end
 end
