@@ -10,7 +10,7 @@
   <% elsif post.user != current_user %>
     <%= button_to image_tag("like.png", class: "like__icon"),
         likes_path,
-        params: { "like[post_id]": post.id, "like[user_id]": current_user.id },
+        params: { "like[post_id]": post.id },
         method: :post,
         class: "btn btn--icon",
         title: "Like"
