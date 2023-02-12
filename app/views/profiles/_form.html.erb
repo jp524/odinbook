@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :picture, "Change your profile picture *" %><br />
-    <%= form.file_field :picture %>
+    <%= form.file_field :picture, direct_upload: true %>
     <p>* Picture must be in a square format or else it will be cropped</p>
   </div>
   

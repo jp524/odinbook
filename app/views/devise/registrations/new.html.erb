@@ -42,7 +42,7 @@
   
       <div class="field">
         <%= profile_form.label :picture, "Add your profile picture *" %><br />
-        <%= profile_form.file_field :picture %>
+        <%= profile_form.file_field :picture, direct_upload: true %>
         <p>* Picture must be in a square format or else it will be cropped</p>
       </div>
     <% end %>
