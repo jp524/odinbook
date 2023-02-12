@@ -7,6 +7,14 @@ class RegistrationsController < Devise::RegistrationsController
     respond_with resource
   end
 
+  def create
+    path = sign_up_params[:profile_attributes][:picture].tempfile.path
+    ImageProcessing::MiniMagick.source(path)
+                               .resize_to_fill(500, 500)
+                               .call(destination: path)
+    super
+  end
+
   protected
 
   def sign_up_params
