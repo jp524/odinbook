@@ -17,6 +17,11 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :profile
 
+  def with_profile
+    build_profile if profile.nil?
+    self
+  end
+
   # List potential friends on Users#index
   def all_friend_requests
     sent_friend_requests + received_friend_requests

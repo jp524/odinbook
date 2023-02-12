@@ -172,6 +172,7 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     nenv (0.3.0)
+    nested_form (0.3.2)
     net-imap (0.3.2)
       date
       net-protocol
@@ -336,6 +337,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  nested_form
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

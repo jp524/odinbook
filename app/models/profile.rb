@@ -8,7 +8,9 @@ class Profile < ApplicationRecord
   validate :user_has_to_be_at_least_thirteen
 
   def user_has_to_be_at_least_thirteen
-    errors.add(:birthday, 'is not acceptable. User must be at least 13 years old') if birthday > Date.today - 13.years
+    if birthday.present? && birthday > Date.today - 13.years
+      errors.add(:birthday, 'is not acceptable. User must be at least 13 years old')
+    end
   end
 
   def formatted_birthday
