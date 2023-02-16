@@ -1,0 +1,7 @@
+post:
+  user: jane
+  content: 'This is a post'
+
+second_post:
+  user: jane
+  content: 'This is my second post'
