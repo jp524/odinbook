@@ -3,3 +3,9 @@ jane_profile:
   name: 'Jane Doe'
   location: 'London, UK'
   birthday: <%= Time.new(1990-01-01) %>
+
+robert_profile:
+  user: robert
+  name: 'Robert Smith'
+  location: 'London, UK'
+  birthday: <%= Time.new(1990-01-01) %>
