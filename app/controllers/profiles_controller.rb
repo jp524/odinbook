@@ -9,10 +9,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    path = profile_params[:picture].tempfile.path
-    ImageProcessing::MiniMagick.source(path)
-                               .resize_to_fill(500, 500)
-                               .call(destination: path)
+    if profile_params[:picture]
+      path = profile_params[:picture].tempfile.path
+      ImageProcessing::MiniMagick.source(path)
+                                 .resize_to_fill(500, 500)
+                                 .call(destination: path)
+    end
     if @profile.update(profile_params)
       redirect_to user_path(current_user)
     else
