@@ -7,7 +7,7 @@
         class: "btn btn--icon",
         title: "Unlike"
     %>
-  <% elsif post.user != current_user %>
+  <% else %>
     <%= button_to image_tag("like.png", class: "like__icon"),
         likes_path,
         params: { "like[post_id]": post.id },

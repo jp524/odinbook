@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   before do
+    Like.delete_all
     @liker = users(:robert)
     @post = posts(:post)
     @like = Like.create(post: @post, user: @liker)
@@ -17,10 +18,10 @@ RSpec.describe Like, type: :model do
   end
 
   describe 'A user' do
-    it 'cannot like their own post' do
+    it 'can like their own post' do
       post_author = users(:jane)
       like_by_author = Like.create(post: @post, user: post_author)
-      expect(like_by_author).to_not be_valid
+      expect(like_by_author).to be_valid
     end
 
     it 'cannot like the same post twice' do
