@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe 'Adding a post' do
     it 'creates a post belonging to a user' do
-      user = User.create!(email: 'test@example.com', password: 'abc123')
+      user = users(:robert)
       post = user.posts.build(content: 'This is a post.')
       post.save
       expect(post.user).to eq(user)

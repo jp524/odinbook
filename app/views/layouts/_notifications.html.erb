@@ -9,7 +9,7 @@
           data-toggle-target="toToggle" >
         <h4>Friend Requests</h4>
         <% current_user.pending_friend_requests.each do |request| %>
-          <li>
+          <li id="user_<%= request.sent_by_id %>">
             <div class="notifications__name">
               <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
             </div>
