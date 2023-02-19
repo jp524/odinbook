@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :comments, only: %i[new create destroy]
   end
   resources :profiles, only: %i[edit update]
-  resources :friend_requests, only: %i[create update]
+  resources :friend_requests, only: %i[create update destroy]
   resources :likes, only: %i[create destroy]
 end

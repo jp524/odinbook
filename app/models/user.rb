@@ -35,10 +35,6 @@ class User < ApplicationRecord
     find_friends('requested')
   end
 
-  def declined_friends
-    find_friends('declined')
-  end
-
   def find_friends(request_status)
     list = []
     selected_requests = all_friend_requests.select { |friend_request| friend_request.status == request_status }

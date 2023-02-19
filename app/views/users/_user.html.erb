@@ -5,7 +5,7 @@
 
     <% if current_user.friends.include?(user) %>
       <p>Friends</p>
-    <% elsif current_user.requested_friends.include?(user) || current_user.declined_friends.include?(user) %>
+    <% elsif current_user.requested_friends.include?(user) %>
       <p>Request Sent</p>
     <% else %>
       <%= button_to "Send Friend Request",

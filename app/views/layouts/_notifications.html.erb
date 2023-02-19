@@ -20,8 +20,7 @@
               class: "btn btn--secondary" %>
             <%= button_to "Decline",
               friend_request_path(request.id),
-              params: { "friend_request[status]": "declined" },
-              method: :patch,
+              method: :delete,
               class: "btn btn--light" %>
           </li>
         <% end %>
