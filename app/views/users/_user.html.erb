@@ -1,6 +1,6 @@
 <%= turbo_frame_tag user do %>
   <div class="user">
-    <%= image_tag user.profile.picture_attachment_path %>
+    <%= image_tag user.profile.picture_attachment_path, class: "profile-img" %>
     <%= link_to user.profile.name, user %>
 
     <% if current_user.friends.include?(user) %>

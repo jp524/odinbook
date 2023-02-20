@@ -1,7 +1,7 @@
 <main class="container user-show">
   <div class="sidebar">
     <div class="sidebar__profile">
-      <%= image_tag @profile.picture_attachment_path %>
+      <%= image_tag @profile.picture_attachment_path, class: "profile-img" %>
       <h2><%= @profile.name %></h2>
       <p>Location: <%= @profile.location %></p>
       <p>Birthday: <%= @profile.formatted_birthday %></p>
