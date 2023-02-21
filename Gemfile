@@ -73,6 +73,8 @@ group :development do
 
   gem 'guard'
   gem 'guard-rspec'
+  
+  gem 'letter_opener'
 end
 
 group :test do

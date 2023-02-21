@@ -1,9 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
 
-  def create
-    set_flash_message! :notice, :signed_up, :now
-  end
+  # def create
+    # set_flash_message! :notice, :signed_up, :now
+  #   set_flash_message! :notice, :signed_up
+  # end
 
   protected
 
