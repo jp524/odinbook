@@ -1,4 +1,4 @@
-<%= form_with model: profile do |form| %>
+<%= form_with model: profile, data: { controller: "disable", "disable-with-value": "Saving...", "disable-disable-class": "btn--disabled" } do |form| %>
   <%= form_error_notification(profile) %>
 
   <div class="field">

@@ -3,7 +3,7 @@
     <h1>Sign up</h1>
   </div>
   
-  <%= nested_form_for([resource_name, resource.with_profile], url: registration_path(resource_name), data: { turbo: false }) do |f| %>
+  <%= nested_form_for([resource_name, resource.with_profile], url: registration_path(resource_name), data: { turbo: false, controller: "disable", "disable-with-value": "Signing up...", "disable-disable-class": "btn--disabled" }) do |f| %>
     <%= form_error_notification(resource) %>
   
     <div class="field">
