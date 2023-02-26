@@ -6,5 +6,9 @@
   &__date {
     color: var(--color-text-muted);
     font-size: var(--font-size-s);
+    
+    @media (max-width: 50rem) {
+      font-size: var(--font-size-xs);
+    }
   }
 }

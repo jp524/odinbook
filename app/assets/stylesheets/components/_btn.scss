@@ -72,7 +72,7 @@
 
   &--small {
     font-size: var(--font-size-s);
-    padding: var(--space-xxs) var(--space-xs);
+    padding: var(--space-xxxs) var(--space-xxs);
   }
 
   &--icon {
@@ -81,5 +81,11 @@
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  @media (max-width: 50rem) {
+    padding: var(--space-xxxs) var(--space-xxxs);
+    font-size: var(--font-size-xs);
+    text-align: center;
   }
 }

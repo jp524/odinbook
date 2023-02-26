@@ -33,4 +33,8 @@
   &--none {
     width: max-content;
   }
+
+  @media (max-width: 50rem) {
+    font-size: var(--font-size-xs);
+  }
 }
