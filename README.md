@@ -5,15 +5,15 @@ This is a clone of circa 2010 Facebook. Registers users can write posts, add com
 
 Users chose to accept or decline friend requests they receive in the notification section of the navigation bar. Once friendships are established users can see each other's posts.
 
-*Demo GIF will be added*
+https://user-images.githubusercontent.com/85654561/221715833-783a256d-f5fb-4d8c-a960-b99b1eb1d7c1.mp4
 
 ## Techniques Implemented
 * Working with multiple models and their associations (`Users`, `Profiles`, `Posts`, `Comments`, `Likes`, `Friend Requests`)
-* User authentication using Devise gem
+* Model and system tests using RSpec, fixtures and Capybara
 * Hotwire (Turbo and Stimulus) to have a reactive single page application. Use of nested Turbo Frames where models were associated
 * Styling following BEM (Block Element Modifier) methodology using SCSS
+* User authentication using Devise gem
 * Cloud hosted `ActiveStorage` for profile pictures
-* Model and system tests using RSpec, fixtures and Capybara
 
 ## Icon Credits
 
