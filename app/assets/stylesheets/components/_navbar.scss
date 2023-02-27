@@ -19,4 +19,10 @@
     align-items: center;
     gap: var(--space-m);
   }
+
+  @media (max-width: 50rem) {
+    &__home {
+      font-size: var(--font-size-m);
+    }
+  }
 }

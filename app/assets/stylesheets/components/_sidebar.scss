@@ -11,6 +11,13 @@
     p {
       font-size: var(--font-size-s);
     }
+    .profile-img {
+      @media (max-width: 50rem) {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 
   &__friends {
