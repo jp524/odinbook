@@ -1,5 +1,7 @@
 # frozen_string_literal: false
 
+puts "\n== Seeding database =="
+
 Comment.delete_all
 Like.delete_all
 Post.delete_all
@@ -8,25 +10,23 @@ Profile.delete_all
 User.delete_all
 
 10.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-  name = "#{first_name} #{last_name}"
+  name = Faker::Movies::HarryPotter.character
 
   user = User.create(
     email: Faker::Internet.email(name: name),
-    password: 'abc123'
+    password: 'password'
   )
 
   Profile.create(
     name: name,
-    location: "#{Faker::Address.city}, #{Faker::Address.country}",
+    location: Faker::Movies::HarryPotter.location,
     birthday: Faker::Date.birthday(min_age: 12, max_age: 90),
     user_id: user.id
   )
 
   3.times do
     Post.create(
-      content: Faker::Lorem.paragraph,
+      content: Faker::Movies::HarryPotter.quote,
       user_id: user.id
     )
   end
