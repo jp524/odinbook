@@ -7,6 +7,11 @@ Users chose to accept or decline friend requests they receive in the notificatio
 
 https://user-images.githubusercontent.com/85654561/221715833-783a256d-f5fb-4d8c-a960-b99b1eb1d7c1.mp4
 
+
+Profile Page | Posts Page | Users Page
+:-------------------------:|:-------------------------:|:-------------------------:
+![Profile Page](readme_files/Screenshot%20Profile%20Page.png) | ![Posts Page](readme_files/Screenshot%20Posts%20Page.png) | ![Users Page](readme_files/Screenshot%20Users%20Page.png)
+
 ## Techniques Implemented
 * Working with multiple models and their associations (`Users`, `Profiles`, `Posts`, `Comments`, `Likes`, `Friend Requests`)
 * Model and system tests using RSpec, fixtures and Capybara
